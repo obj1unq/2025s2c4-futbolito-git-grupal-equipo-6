@@ -4,9 +4,10 @@ import wollok.game.*
 object lionel {
 	
 	var property position = game.at(3,5)
+	var tieneLaTitular = true
 	
 	method image() {
-		return "lionel-titular.png"
+		return if (tieneLaTitular) "lionel-titular.png" else "lionel-suplente.png"
 	}
 
 	method retroceder() {
@@ -15,6 +16,12 @@ object lionel {
 	
 	method avanzar() {
 		position = game.at((game.width() - 1).min(position.x() + 1), position.y()) 
+	}
+
+	method cambiarCamiseta(){
+		if (self.position().x() == 0){
+			tieneLaTitular = not tieneLaTitular
+		}
 	}
 	
 }

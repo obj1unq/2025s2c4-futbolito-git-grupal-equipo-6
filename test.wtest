@@ -1,0 +1,15 @@
+import objetos.*
+import wollok.game.*
+describe "Leo se cambia la camisa"{
+    test "Leo no cambia si no esta en el borde"{
+        assert.equals("lionel-titular.png", lionel.image())
+        lionel.cambiarCamiseta()
+        assert.equals("lionel-titular.png", lionel.image())
+    }
+    test "Leo puede cambiar si esta en el borde"{
+        lionel.position(game.at(0,0))
+        assert.equals("lionel-titular.png", lionel.image())
+        lionel.cambiarCamiseta()
+        assert.equals("lionel-suplente.png", lionel.image())
+    }
+}
