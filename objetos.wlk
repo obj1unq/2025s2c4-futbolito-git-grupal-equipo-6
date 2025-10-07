@@ -7,12 +7,7 @@ object lionel {
 	var tieneLaTitular = true
 	
 	method image() {
-		if (tieneLaTitular){
-			return "lionel-titular.png"
-		}
-		else{
-			return "lionel-suplente.png"
-		}
+		return if (tieneLaTitular) "lionel-titular.png" else "lionel-suplente.png"
 	}
 
 	method retroceder() {
