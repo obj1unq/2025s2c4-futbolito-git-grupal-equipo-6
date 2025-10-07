@@ -16,11 +16,21 @@ object lionel {
 	method avanzar() {
 		position = game.at((game.width() - 1).min(position.x() + 1), position.y()) 
 	}
-	
+
+	method realizarSaqueLateral() {
+        pelota.moverALateralInferior() 
+        const posicionPelota = pelota.position().x()
+        position = game.at(posicionPelota - 1, 0)  
+    }
+
 }
 
 
 object pelota {
 	const property image="pelota.png"
 	var property position = game.at(5,5)	
+
+	method moverALateralInferior() {
+        position = game.at(position.x(), 0)
+    }
 }
