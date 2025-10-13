@@ -1,0 +1,11 @@
+import objetos.*
+describe "test lio se posiciona sobre la pelota patea de taquito" {
+    method initialize(){
+        lionel.position(pelota.position())
+    }
+
+  test "lio patea de taquito 2 lugares hacia atras" {
+        lionel.taquito()
+        assert.equals(pelota.position(), game.at(lionel.position().left(2).x(),5))
+  }
+}
